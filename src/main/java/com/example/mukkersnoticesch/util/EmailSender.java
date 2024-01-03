@@ -1,6 +1,5 @@
 package com.example.mukkersnoticesch.util;
 
-import java.util.Map;
 import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -10,12 +9,12 @@ public class EmailSender {
 
     public static String send(String toEmail, String title, String content) {
         // 이메일 발송 관련 정보 설정
-        String from = "gustkdwn2@naver.com";
-        final String username = "gustkdwn2@naver.com";
-        final String password = "x13101310!";
+        final String from = "hsj@infotech.co.kr";
+        final String username = "hsj@infotech.co.kr";
+        final String password = "zWq3QSgCoIUb";
 
         // SMTP 서버 설정
-        String host = "smtp.naver.com";
+        String host = "smtp.worksmobile.com";
 
         // 메일 속성 설정
         Properties properties = new Properties();
@@ -26,6 +25,7 @@ public class EmailSender {
 
         // 세션 생성 및 인증
         Session session = Session.getInstance(properties, new Authenticator() {
+            @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(username, password);
             }
